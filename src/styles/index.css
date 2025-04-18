@@ -58,3 +58,24 @@ body{
 .okay:hover{
     color: #42f313;
 }
+.botonWarning{
+    background-color: #d7c740;
+
+}
+.botonWarning:hover{
+    background-color: #f5e136;
+}
+.botonDelete{
+    background-color: #b82525;
+
+}
+.botonDelete:hover{
+    background-color: #e41111;
+}
+.botonSend{
+    background-color: #299c27;
+
+}
+.botonSend:hover{
+    background-color: #29c226;
+}
