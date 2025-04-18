@@ -141,9 +141,11 @@ const Home = () => {
 		
 		if(visible===id){
 			setVisible(null)
+			setIds(null);
 		}
 		else{
 			setVisible(id)
+			setIds(id);
 		}
 	}
 
