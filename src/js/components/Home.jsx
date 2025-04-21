@@ -16,31 +16,31 @@ const Home = () => {
 	const getDataFunction = async () => {
 		try{
 			const getFectch = await fetch("https://playground.4geeks.com/todo/users/j_arevalo");
+			if(getFectch.status == 404){
+				
+			
+				const postFetch = await fetch("https://playground.4geeks.com/todo/users/j_arevalo",{
+					method: "POST",
+					headers: {
+						'Content-Type': 'application/json'
+					},
+				});
+				const postData = await postFetch.json();
+				
+	
+				
+				
+				const getFetch = await fetch("https://playground.4geeks.com/todo/users/j_arevalo");
+				const getData = await getFetch.json();
+						setStore(getData.todos)
+					
+			}
+			
 			const getData = await getFectch.json();
 			setStore(getData.todos)
 		}catch(error){
 			console.log(error)
-			try{const postFetch = await fetch("https://playground.4geeks.com/todo/users/j_arevalo",{
-				method: "POST",
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: {}
-			});
-			const postData = await postFetch.json();}
-			catch(error){
-				console.log(error)
-
-			}
-			try{
-			const getFetch = await fetch("https://playground.4geeks.com/todo/users/j_arevalo");
-			const getData = await getFetch.json();
-					setStore(getData.todos)
-				}
-			catch(error){
-				
-				console.log(error)
-			}
+			
 
 		}
 
